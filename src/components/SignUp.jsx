@@ -19,13 +19,16 @@ const SignUp = () => {
 
         const newUser = { name, email, createdAt };
         //  save new user info to the datebase
-        fetch(`http://localhost:5000/users`, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        })
+        fetch(
+          `https://coffee-store-server-main-h6mbsc4mt-pritam-chowdhurys-projects.vercel.app/users`,
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(newUser),
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             // console.log("user created to de=b", data);
